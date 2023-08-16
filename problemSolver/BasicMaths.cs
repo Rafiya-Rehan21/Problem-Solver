@@ -190,7 +190,11 @@ namespace problemSolver
 
         private void btnEnter_Click(object sender, EventArgs e)
         {
-            Expression expression = new Expression(txtDisplay.Text);
+            string expr = txtDisplay.Text;
+
+            expr = expr.Replace("%", "/100");
+
+            Expression expression = new Expression(expr);
             Object value = expression.Eval();
             txtDisplay.Text = value.ToString();
         }
