@@ -49,12 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Area,VolumeCalculations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Area,VolumeCalculations.Designer.cs">
+      <DependentUpon>Area,VolumeCalculations.cs</DependentUpon>
+    </Compile>
     <Compile Include="BasicMaths.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BasicMaths.Designer.cs">
       <DependentUpon>BasicMaths.cs</DependentUpon>
     </Compile>
+    <Compile Include="BL\Circle.cs" />
+    <Compile Include="BL\Cone.cs" />
+    <Compile Include="BL\Cylinder.cs" />
+    <Compile Include="BL\Parallelogram.cs" />
+    <Compile Include="BL\Rectangle.cs" />
+    <Compile Include="BL\Shape.cs" />
+    <Compile Include="BL\Square.cs" />
+    <Compile Include="BL\Trapezium.cs" />
+    <Compile Include="BL\Triangle.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Area,VolumeCalculations.resx">
+      <DependentUpon>Area,VolumeCalculations.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BasicMaths.resx">
       <DependentUpon>BasicMaths.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,12 +31,10 @@
             this.btnBracket1 = new System.Windows.Forms.Button();
             this.btn6 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
-            this.btnBracket4 = new System.Windows.Forms.Button();
             this.btnSymbol1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
             this.btn5 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
-            this.btnBracket3 = new System.Windows.Forms.Button();
             this.btn0 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn4 = new System.Windows.Forms.Button();
@@ -68,6 +66,7 @@
             this.btnSqRoot = new System.Windows.Forms.Button();
             this.btnNRoot = new System.Windows.Forms.Button();
             this.txtDisplay = new System.Windows.Forms.TextBox();
+            this.btnSquare = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnBracket1
@@ -105,18 +104,6 @@
             this.btn9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn9.UseVisualStyleBackColor = true;
             this.btn9.Click += new System.EventHandler(this.btn9_Click);
-            // 
-            // btnBracket4
-            // 
-            this.btnBracket4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBracket4.Location = new System.Drawing.Point(396, 208);
-            this.btnBracket4.Name = "btnBracket4";
-            this.btnBracket4.Size = new System.Drawing.Size(44, 30);
-            this.btnBracket4.TabIndex = 3;
-            this.btnBracket4.Text = "]";
-            this.btnBracket4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBracket4.UseVisualStyleBackColor = true;
-            this.btnBracket4.Click += new System.EventHandler(this.btnBracket4_Click);
             // 
             // btnSymbol1
             // 
@@ -165,18 +152,6 @@
             this.btn8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn8.UseVisualStyleBackColor = true;
             this.btn8.Click += new System.EventHandler(this.btn8_Click);
-            // 
-            // btnBracket3
-            // 
-            this.btnBracket3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBracket3.Location = new System.Drawing.Point(315, 208);
-            this.btnBracket3.Name = "btnBracket3";
-            this.btnBracket3.Size = new System.Drawing.Size(44, 30);
-            this.btnBracket3.TabIndex = 8;
-            this.btnBracket3.Text = "[";
-            this.btnBracket3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBracket3.UseVisualStyleBackColor = true;
-            this.btnBracket3.Click += new System.EventHandler(this.btnBracket3_Click);
             // 
             // btn0
             // 
@@ -243,9 +218,9 @@
             this.btnSymbol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSymbol.Location = new System.Drawing.Point(65, 455);
             this.btnSymbol.Name = "btnSymbol";
-            this.btnSymbol.Size = new System.Drawing.Size(44, 30);
+            this.btnSymbol.Size = new System.Drawing.Size(63, 30);
             this.btnSymbol.TabIndex = 14;
-            this.btnSymbol.Text = ",";
+            this.btnSymbol.Text = "x10^n";
             this.btnSymbol.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSymbol.UseVisualStyleBackColor = true;
             this.btnSymbol.Click += new System.EventHandler(this.btnSymbol_Click);
@@ -481,7 +456,7 @@
             // btnIsEqualTo
             // 
             this.btnIsEqualTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIsEqualTo.Location = new System.Drawing.Point(486, 208);
+            this.btnIsEqualTo.Location = new System.Drawing.Point(396, 208);
             this.btnIsEqualTo.Name = "btnIsEqualTo";
             this.btnIsEqualTo.Size = new System.Drawing.Size(44, 30);
             this.btnIsEqualTo.TabIndex = 35;
@@ -544,12 +519,26 @@
             this.txtDisplay.Size = new System.Drawing.Size(510, 31);
             this.txtDisplay.TabIndex = 40;
             // 
+            // btnSquare
+            // 
+            this.btnSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSquare.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnSquare.Location = new System.Drawing.Point(315, 208);
+            this.btnSquare.Name = "btnSquare";
+            this.btnSquare.Size = new System.Drawing.Size(44, 30);
+            this.btnSquare.TabIndex = 41;
+            this.btnSquare.Text = "Sq.";
+            this.btnSquare.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSquare.UseVisualStyleBackColor = true;
+            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
+            // 
             // BasicMaths
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::problemSolver.Properties.Resources.basicMaths;
             this.ClientSize = new System.Drawing.Size(823, 508);
+            this.Controls.Add(this.btnSquare);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.btnNRoot);
             this.Controls.Add(this.btnSqRoot);
@@ -581,12 +570,10 @@
             this.Controls.Add(this.btn4);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn0);
-            this.Controls.Add(this.btnBracket3);
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn5);
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btnSymbol1);
-            this.Controls.Add(this.btnBracket4);
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btn6);
             this.Controls.Add(this.btnBracket1);
@@ -603,12 +590,10 @@
         private System.Windows.Forms.Button btnBracket1;
         private System.Windows.Forms.Button btn6;
         private System.Windows.Forms.Button btn9;
-        private System.Windows.Forms.Button btnBracket4;
         private System.Windows.Forms.Button btnSymbol1;
         private System.Windows.Forms.Button btn2;
         private System.Windows.Forms.Button btn5;
         private System.Windows.Forms.Button btn8;
-        private System.Windows.Forms.Button btnBracket3;
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn4;
@@ -640,5 +625,6 @@
         private System.Windows.Forms.Button btnSqRoot;
         private System.Windows.Forms.Button btnNRoot;
         private System.Windows.Forms.TextBox txtDisplay;
+        private System.Windows.Forms.Button btnSquare;
     }
 }

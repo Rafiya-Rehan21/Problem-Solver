@@ -8,19 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using org.matheval;
-
+using problemSolver.BL;
 namespace problemSolver
 {
-    public partial class BasicMaths : Form
+    public partial class Area_VolumeCalculations : Form
     {
-        public BasicMaths()
+        public Area_VolumeCalculations()
         {
             InitializeComponent();
         }
 
-        private void btnBracket1_Click(object sender, EventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "(";
+        }
+
+        private void Area_VolumeCalculations_Load(object sender, EventArgs e)
+        {
+            lblInput1.Hide();
+            lblInput2.Hide(); 
+        }
+
+        private void btn7_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text += "7";
         }
 
         private void btnBracket2_Click(object sender, EventArgs e)
@@ -28,19 +39,19 @@ namespace problemSolver
             txtDisplay.Text += ")";
         }
 
-        private void btnDel_Click(object sender, EventArgs e)
+        private void btndelete_Click(object sender, EventArgs e)
         {
             txtDisplay.Text = null;
         }
 
-        private void btnX_Click(object sender, EventArgs e)
+        private void btnSquare_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += "x";
+            txtDisplay.Text += "^2";
         }
 
-        private void btn7_Click(object sender, EventArgs e)
+        private void btnIsEqualTo_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += "7";
+            txtDisplay.Text += "=";
         }
 
         private void btn8_Click(object sender, EventArgs e)
@@ -58,14 +69,9 @@ namespace problemSolver
             txtDisplay.Text += "*";
         }
 
-        private void btnExponent_Click(object sender, EventArgs e)
+        private void btnExponenet_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "^";
-        }
-
-        private void btnY_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "y";
         }
 
         private void btn4_Click(object sender, EventArgs e)
@@ -93,11 +99,6 @@ namespace problemSolver
             txtDisplay.Text += "+";
         }
 
-        private void btnZ_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "z";
-        }
-
         private void btn1_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "1";
@@ -118,7 +119,12 @@ namespace problemSolver
             txtDisplay.Text += "-";
         }
 
-        private void btnSymbol_Click(object sender, EventArgs e)
+        private void btnSqRoot_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPowerMultiply_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "*10^";
         }
@@ -128,7 +134,7 @@ namespace problemSolver
             txtDisplay.Text += "0";
         }
 
-        private void btnSymbol1_Click(object sender, EventArgs e)
+        private void btnDecimal_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += ".";
         }
@@ -138,80 +144,24 @@ namespace problemSolver
             txtDisplay.Text += "%";
         }
 
-        private void btnSpace_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += " ";
-        }
-
-        private void btnLessThanEqual_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "<=";
-        }
-
-        private void btnGreaterEqual_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += ">=";
-        }
-
-        private void btnOR_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "|";
-        }
-
-        private void btnNot_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "!";
-        }
-
-        private void btnLessThan_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "<";
-        }
-
-        private void btnGreaterThan_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += ">";
-        }
-
-        private void BasicMaths_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnEnter_Click(object sender, EventArgs e)
         {
             string expr = txtDisplay.Text;
 
             expr = expr.Replace("%", "/100");
 
-            Expression expression = new Expression(expr);
-            Object value = expression.Eval();
-            txtDisplay.Text = value.ToString();
-        }
+            //  Expression expression = new Expression(expr);
+            //  Object value = expression.Eval();
+            //  txtDisplay.Text = value.ToString();
 
-        private void btne_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "e";
-        }
+            if (cbxShape.SelectedItem.ToString() == "Triangle")
+            {
+                lblInput1.Show();
+                lblInput2.Show();
+                lblInput1.Text = "Base: ";
+                lblInput2.Text = "Height: ";
+            }
 
-        private void btnPi_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "Pi";
-        }
-
-        private void btnIsEqualTo_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "=";
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSquare_Click(object sender, EventArgs e)
-        {
-            txtDisplay.Text += "^2";
         }
     }
 }

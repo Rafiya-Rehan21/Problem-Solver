@@ -31,14 +31,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.problemTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.basicMathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleCalcualtionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.areaVolumeCalculationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.algebraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trignometryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linearAlgebraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblName = new System.Windows.Forms.Label();
-            this.simpleCalcualtionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.areaVolumeCalculationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,20 @@
             this.basicMathToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.basicMathToolStripMenuItem.Text = "Basic Math";
             this.basicMathToolStripMenuItem.Click += new System.EventHandler(this.basicMathToolStripMenuItem_Click);
+            // 
+            // simpleCalcualtionsToolStripMenuItem
+            // 
+            this.simpleCalcualtionsToolStripMenuItem.Name = "simpleCalcualtionsToolStripMenuItem";
+            this.simpleCalcualtionsToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.simpleCalcualtionsToolStripMenuItem.Text = "Simple Calcualtions";
+            this.simpleCalcualtionsToolStripMenuItem.Click += new System.EventHandler(this.simpleCalcualtionsToolStripMenuItem_Click);
+            // 
+            // areaVolumeCalculationsToolStripMenuItem
+            // 
+            this.areaVolumeCalculationsToolStripMenuItem.Name = "areaVolumeCalculationsToolStripMenuItem";
+            this.areaVolumeCalculationsToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
+            this.areaVolumeCalculationsToolStripMenuItem.Text = "Area/Volume Calculations";
+            this.areaVolumeCalculationsToolStripMenuItem.Click += new System.EventHandler(this.areaVolumeCalculationsToolStripMenuItem_Click);
             // 
             // algebraToolStripMenuItem
             // 
@@ -115,19 +129,6 @@
             this.lblName.Size = new System.Drawing.Size(170, 25);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Problem Solver";
-            // 
-            // simpleCalcualtionsToolStripMenuItem
-            // 
-            this.simpleCalcualtionsToolStripMenuItem.Name = "simpleCalcualtionsToolStripMenuItem";
-            this.simpleCalcualtionsToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.simpleCalcualtionsToolStripMenuItem.Text = "Simple Calcualtions";
-            this.simpleCalcualtionsToolStripMenuItem.Click += new System.EventHandler(this.simpleCalcualtionsToolStripMenuItem_Click);
-            // 
-            // areaVolumeCalculationsToolStripMenuItem
-            // 
-            this.areaVolumeCalculationsToolStripMenuItem.Name = "areaVolumeCalculationsToolStripMenuItem";
-            this.areaVolumeCalculationsToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
-            this.areaVolumeCalculationsToolStripMenuItem.Text = "Area/Volume Calculations";
             // 
             // Home
             // 

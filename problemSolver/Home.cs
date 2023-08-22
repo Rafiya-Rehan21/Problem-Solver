@@ -34,5 +34,13 @@ namespace problemSolver
             frm.ShowDialog();
             this.Show();
         }
+
+        private void areaVolumeCalculationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Area_VolumeCalculations();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }
