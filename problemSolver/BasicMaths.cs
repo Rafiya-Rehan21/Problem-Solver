@@ -213,5 +213,10 @@ namespace problemSolver
         {
             txtDisplay.Text += "^2";
         }
+
+        private void btnSqRoot_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -499,6 +499,7 @@
             this.btnSqRoot.Text = "Sq.Root";
             this.btnSqRoot.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnSqRoot.UseVisualStyleBackColor = true;
+            this.btnSqRoot.Click += new System.EventHandler(this.btnSqRoot_Click);
             // 
             // btnNRoot
             // 
