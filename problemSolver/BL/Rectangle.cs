@@ -13,13 +13,22 @@ namespace problemSolver.BL
         private float Width;
         private float Height;
 
-        public Rectangle(string Length,string Width, string Height)
+        public Rectangle()
         {
-            base.paramters.Add(Length);
-            base.paramters.Add(Width);
-            base.paramters.Add(Height);
+            base.paramters.Add("Length");
+            base.paramters.Add("Width");
+            base.paramters.Add("Height");
         }
 
+        protected override void setVariables()
+        {
+            if (base.paramterValues.Count == 3)
+            {
+                Length = paramterValues[0];
+                Width = paramterValues[1];
+                Height = paramterValues[2];
+            }
+        }
         public override float calcualteArea()
         {
             float area = Length * Width;

@@ -11,10 +11,19 @@ namespace problemSolver.BL
         private float Base;
         private float Height;
 
-        public Parallelogram(string Base, string Height)
+        public Parallelogram()
         {
-            base.paramters.Add(Base);
-            base.paramters.Add(Height);
+            base.paramters.Add("Base");
+            base.paramters.Add("Height");
+        }
+
+        protected override void setVariables()
+        {
+            if (base.paramterValues.Count == 2)
+            {
+                Base = paramterValues[0];
+                Height = paramterValues[1];
+            }
         }
 
         public override float calcualteArea()

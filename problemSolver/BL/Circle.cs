@@ -10,10 +10,17 @@ namespace problemSolver.BL
     {
         private float Radius;
 
-        public Circle(string Radius)
+        public Circle()
         {
-            base.paramters.Add(Radius);
+            base.paramters.Add("Radius");
         }
+
+        protected override void setVariables()
+        {
+            if (base.paramterValues.Count == 1)
+                Radius = paramterValues[0];
+        }
+
         public override float calcualteArea()
         {
             float area = (float)Math.Pow(Radius, 2) * (float)Math.PI;

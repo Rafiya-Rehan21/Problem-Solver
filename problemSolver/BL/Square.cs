@@ -10,9 +10,17 @@ namespace problemSolver.BL
     {
         private float Length;
 
-        public Square(string Length)
+        public Square()
         {
-            base.paramters.Add(Length);
+            base.paramters.Add("Length");
+        }
+
+        protected override void setVariables()
+        {
+            if (base.paramterValues.Count == 1)
+            {
+                Length = paramterValues[0];
+            }
         }
 
         public override float calcualteArea()

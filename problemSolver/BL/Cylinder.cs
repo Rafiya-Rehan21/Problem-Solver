@@ -11,12 +11,20 @@ namespace problemSolver.BL
         private float Radius;
         private float Height;
 
-        public Cylinder(string Radius, string Height)
+        public Cylinder()
         {
-            base.paramters.Add(Radius);
-            base.paramters.Add(Height);
+            base.paramters.Add("Radius");
+            base.paramters.Add("Height");
         }
 
+        protected override void setVariables()
+        {
+            if (base.paramterValues.Count == 2)
+            {
+                Radius = paramterValues[0];
+                Height = paramterValues[1];
+            }
+        }
         public override float calcualteArea()
         {
             float area = 2 * (float)Math.PI * Radius * (Height + Radius);
