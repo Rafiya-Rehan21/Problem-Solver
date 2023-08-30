@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using org.matheval;
+using org.matheval.Functions;
 
 namespace problemSolver
 {
@@ -183,6 +184,7 @@ namespace problemSolver
             string expr = txtDisplay.Text;
 
             expr = expr.Replace("%", "/100");
+            expr = expr.Replace("√", "SQRT");
 
             Expression expression = new Expression(expr);
             Object value = expression.Eval();
@@ -216,7 +218,7 @@ namespace problemSolver
 
         private void btnSqRoot_Click(object sender, EventArgs e)
         {
-            
+            txtDisplay.Text += "√";
         }
     }
 }

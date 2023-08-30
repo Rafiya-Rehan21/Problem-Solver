@@ -19,7 +19,10 @@ namespace problemSolver
 
         private void trignometryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form frm = new Trignometry();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
         }
 
         private void basicMathToolStripMenuItem_Click(object sender, EventArgs e)
