@@ -184,7 +184,17 @@ namespace problemSolver
             string expr = txtDisplay.Text;
 
             expr = expr.Replace("%", "/100");
-            expr = expr.Replace("√", "SQRT");
+
+            int sqrootIdx = expr.IndexOf("√");
+
+            if (sqrootIdx != -1)
+            {
+                if (expr.IndexOf(')') == -1)
+                    expr += ')';
+
+                expr = expr.Replace("√", "SQRT");
+            }
+
 
             Expression expression = new Expression(expr);
             Object value = expression.Eval();
@@ -218,7 +228,7 @@ namespace problemSolver
 
         private void btnSqRoot_Click(object sender, EventArgs e)
         {
-            txtDisplay.Text += "√";
+            txtDisplay.Text += "√(";
         }
     }
 }
