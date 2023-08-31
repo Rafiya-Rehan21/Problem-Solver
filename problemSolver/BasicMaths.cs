@@ -195,7 +195,6 @@ namespace problemSolver
                 expr = expr.Replace("√", "SQRT");
             }
 
-
             Expression expression = new Expression(expr);
             Object value = expression.Eval();
             txtDisplay.Text = value.ToString();
@@ -229,6 +228,10 @@ namespace problemSolver
         private void btnSqRoot_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "√(";
+        }
+
+        private void btnCubeRoot_Click(object sender, EventArgs e)
+        {
         }
     }
 }
