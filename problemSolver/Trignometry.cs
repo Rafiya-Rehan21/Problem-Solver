@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using org.matheval;
@@ -13,6 +14,9 @@ namespace problemSolver
 {
     public partial class Trignometry : Form
     {
+        //Regex funcRX = new Regex(@"(?:SIN|COS|TAN|COSEC|CSC|SEC|COT)\([0-9]*[+\-*\/\^](?R)?\)"); // not supported by C#, emulated in getTrigFunctions
+        List<string> trigFuncNames = new List<string>() { "SIN", "COS", "TAN", "COSEC", "CSC", "SEC", "TAN" };
+
         public Trignometry()
         {
             InitializeComponent();
@@ -26,6 +30,120 @@ namespace problemSolver
         private void btn9_Click(object sender, EventArgs e)
         {
             txtDisplay.Text += "9";
+        }
+
+        private string getAngle(string line)
+        {
+            string angle = "";
+            int openBrackets = 0;
+
+            for (int i = 0; i < line.Length; i++)
+            {
+                if (line[i] == '(')
+                    openBrackets++;
+                else if (line[i] == ')')
+                    openBrackets--;
+
+                if (openBrackets > 0)
+                {
+                    if (line[i] != '(' || openBrackets != 1)
+                        angle += line[i];
+                }
+            }
+
+            return angle;
+        }
+
+        private string getTrigFunction(int startIdx, string line)
+        {
+            string extracted = "";
+            string str = line.Substring(startIdx);
+
+            foreach (string func in trigFuncNames)
+            {
+                int idx = str.IndexOf(func);
+
+                if (idx == 0)
+                {
+                    if (str[idx + func.Length] == '(')
+                    {
+                        extracted = func + '(';
+                        bool arithmeticSymbolFound = false;
+
+                        for (int i = idx + func.Length + 1; i < str.Length; i++)
+                        {
+                            char c = str[i];
+
+                            if (c >= '0' && c <= '9')
+                            {
+                                extracted += c;
+                            }
+                            else if ((c == '+' || c == '-' || c == '*' || c == '/' || c == '^') && !arithmeticSymbolFound)
+                            {
+                                extracted += c;
+                                arithmeticSymbolFound = true;
+                            }
+                            else
+                            {
+                                extracted += getTrigFunction(i, str);
+
+                                break;
+                            }
+                        }
+
+                        if (str[idx + extracted.Length] != ')')
+                            return "";
+
+                        extracted += ')';
+                        break;
+                    }
+                }
+                    
+            }
+
+            return extracted;
+        }
+
+        private List<string> getTrigFunctions(string line)
+        {
+            int idx = 0;
+            List<string> functions = new List<string>();
+
+            while (idx < line.Length)
+            {
+                string func = getTrigFunction(idx, line);
+
+                if (func != "")
+                {
+                    functions.Add(func);
+                    idx += func.Length;
+                }
+                else
+                {
+                    idx++;
+                }
+            }
+
+            functions = functions.Distinct().ToList();
+
+            return functions;
+        }
+
+        private string convertAnglesToDegrees(string line)
+        {
+            string converted = line;
+            List<string> funcs = getTrigFunctions(line);
+
+            foreach (string func in funcs)
+            {
+                string angle = getAngle(func);
+                int idx = func.IndexOf(angle);
+
+                string convertedFunc = func.Substring(0, idx) + "RADIANS(" + convertAnglesToDegrees(angle) + ')' + func.Substring(idx + angle.Length);
+                converted = converted.Replace(func, convertedFunc);
+            }
+
+            return converted;
         }
 
         private void btnEnter_Click(object sender, EventArgs e)
@@ -59,21 +177,12 @@ namespace problemSolver
 
             if (rbDegree.Checked)
             {
-                string str = expr.ToString();
-                string extracted = str.Substring('(', ')');
-                double radians = Math.PI / 180;
-                double Convert = double.Parse(extracted) * radians;
-
-                Expression expressRadians = new Expression(Convert.ToString());
-                Object valueForRadians = expressRadians.Eval();
-                txtDisplay.Text = valueForRadians.ToString();
+                expr = convertAnglesToDegrees(expr);
             }
-            else
-            {
-                Expression expression = new Expression(expr);
-                Object value = expression.Eval();
-                txtDisplay.Text = value.ToString();
-            } 
+
+            Expression expressRadians = new Expression(expr);
+            Object valueForRadians = expressRadians.Eval();
+            txtDisplay.Text = valueForRadians.ToString();
         }
 
         private void Trignometry_Load(object sender, EventArgs e)
