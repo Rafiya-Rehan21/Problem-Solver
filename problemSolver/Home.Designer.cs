@@ -33,11 +33,7 @@
             this.basicMathToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.simpleCalcualtionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.areaVolumeCalculationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.algebraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trignometryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calculusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.linearAlgebraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.staticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblName = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,11 +52,7 @@
             // 
             this.problemTypeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.basicMathToolStripMenuItem,
-            this.algebraToolStripMenuItem,
-            this.trignometryToolStripMenuItem,
-            this.calculusToolStripMenuItem,
-            this.linearAlgebraToolStripMenuItem,
-            this.staticsToolStripMenuItem});
+            this.trignometryToolStripMenuItem});
             this.problemTypeToolStripMenuItem.Name = "problemTypeToolStripMenuItem";
             this.problemTypeToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.problemTypeToolStripMenuItem.Text = "Problem Calculator";
@@ -89,36 +81,12 @@
             this.areaVolumeCalculationsToolStripMenuItem.Text = "Area/Volume Calculations";
             this.areaVolumeCalculationsToolStripMenuItem.Click += new System.EventHandler(this.areaVolumeCalculationsToolStripMenuItem_Click);
             // 
-            // algebraToolStripMenuItem
-            // 
-            this.algebraToolStripMenuItem.Name = "algebraToolStripMenuItem";
-            this.algebraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.algebraToolStripMenuItem.Text = "Algebra";
-            // 
             // trignometryToolStripMenuItem
             // 
             this.trignometryToolStripMenuItem.Name = "trignometryToolStripMenuItem";
             this.trignometryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.trignometryToolStripMenuItem.Text = "Trigonometry";
             this.trignometryToolStripMenuItem.Click += new System.EventHandler(this.trignometryToolStripMenuItem_Click);
-            // 
-            // calculusToolStripMenuItem
-            // 
-            this.calculusToolStripMenuItem.Name = "calculusToolStripMenuItem";
-            this.calculusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.calculusToolStripMenuItem.Text = "Calculus";
-            // 
-            // linearAlgebraToolStripMenuItem
-            // 
-            this.linearAlgebraToolStripMenuItem.Name = "linearAlgebraToolStripMenuItem";
-            this.linearAlgebraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.linearAlgebraToolStripMenuItem.Text = "Linear Algebra";
-            // 
-            // staticsToolStripMenuItem
-            // 
-            this.staticsToolStripMenuItem.Name = "staticsToolStripMenuItem";
-            this.staticsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.staticsToolStripMenuItem.Text = "Statics";
             // 
             // lblName
             // 
@@ -153,11 +121,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem problemTypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem basicMathToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem algebraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem trignometryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem calculusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem linearAlgebraToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem staticsToolStripMenuItem;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.ToolStripMenuItem simpleCalcualtionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem areaVolumeCalculationsToolStripMenuItem;

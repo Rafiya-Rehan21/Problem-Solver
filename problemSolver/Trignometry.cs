@@ -129,7 +129,7 @@ namespace problemSolver
             return functions;
         }
 
-        private string convertAnglesToDegrees(string line)
+        private string convertAnglesToRadians(string line)
         {
             string converted = line;
             List<string> funcs = getTrigFunctions(line);
@@ -139,7 +139,7 @@ namespace problemSolver
                 string angle = getAngle(func);
                 int idx = func.IndexOf(angle);
 
-                string convertedFunc = func.Substring(0, idx) + "RADIANS(" + convertAnglesToDegrees(angle) + ')' + func.Substring(idx + angle.Length);
+                string convertedFunc = func.Substring(0, idx) + "RADIANS(" + convertAnglesToRadians(angle) + ')' + func.Substring(idx + angle.Length);
                 converted = converted.Replace(func, convertedFunc);
             }
 
@@ -177,7 +177,7 @@ namespace problemSolver
 
             if (rbDegree.Checked)
             {
-                expr = convertAnglesToDegrees(expr);
+                expr = convertAnglesToRadians(expr);
             }
 
             Expression expressRadians = new Expression(expr);
